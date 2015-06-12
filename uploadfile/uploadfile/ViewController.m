@@ -21,11 +21,13 @@
     UploadFile *uploadFile = [[UploadFile alloc] init];
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"头像1.png" ofType:nil];
     
+    // 其他数据
     NSDictionary *params = @{@"_name":@"wangdk", @"tel":@"18618155653"};
     uploadFile.postParams = params;
     
+    // 图片数据
     NSData *data = [NSData dataWithContentsOfFile:filePath];
-    [uploadFile uploadFileWithURL:[NSURL URLWithString:@"http://credit_bank.alltosun.net/user/test/upload_file"] data:data];
+    [uploadFile uploadFileWithURL:[NSURL URLWithString:@"http://localhost/upload_file"] data:data];
     
 
 }
